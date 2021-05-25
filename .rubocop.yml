@@ -6,9 +6,6 @@ Style/FrozenStringLiteralComment:
 Naming/VariableNumber:
   Enabled: false
 
-Performance/FixedSize:
-  Enabled: false
-
 Lint/AmbiguousBlockAssociation:
   Enabled: false
 
@@ -40,3 +37,6 @@ AllCops:
     - db/*
     - db/migrate/*
     - config/**
+
+Style/Documentation:
+  Enabled: false
