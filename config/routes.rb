@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/users/me', to: 'users#me'
       resources :users
+      resources :questions do
+        patch :viewed, on: :member
+      end
+      resources :answers, only: :create
     end
   end
 end
