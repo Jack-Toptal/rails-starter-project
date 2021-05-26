@@ -4,8 +4,6 @@ development:
   host: localhost
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: postgres
-  password: postgres
 
 test:
   adapter: postgresql
@@ -13,5 +11,3 @@ test:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   min_messages: WARNING
-  username: postgres
-  password: postgres
