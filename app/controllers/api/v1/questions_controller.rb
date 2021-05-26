@@ -8,7 +8,7 @@ module Api
         questions = questions.where('lower(tags) LIKE ?', "%#{params[:filter].downcase}%") if params[:filter].present?
         questions = questions.order(created_at: :desc).page(params[:page]).per(per_page)
 
-        render json: questions, meta: { page: { pages: questions.total_pages } }
+        render json: questions, meta: { totalPages: questions.total_pages }
       end
 
       def show

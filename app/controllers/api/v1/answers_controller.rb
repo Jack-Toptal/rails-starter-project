@@ -4,7 +4,8 @@ module Api
       before_action :doorkeeper_authorize!
 
       def create
-        @answer = question.answers.new(answer_params)
+        @question = Question.find(params[:data][:relationships][:question][:data][:id])
+        @answer = @question.answers.new(answer_params)
         @answer.user = current_user
         if @answer.save
           render json: @answer
@@ -14,10 +15,6 @@ module Api
       end
 
       private
-
-      def question
-        @question ||= Question.find(params[:question_id])
-      end
 
       def answer_params
         params.require(:data).require(:attributes).permit(:body, :description, :tags)

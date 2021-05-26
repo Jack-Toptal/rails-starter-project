@@ -7,8 +7,8 @@ Rails.application.routes.draw do
       resources :users
       resources :questions do
         patch :viewed, on: :member
-        resources :answers, only: :create
       end
+      resources :answers, only: :create
     end
   end
 end
